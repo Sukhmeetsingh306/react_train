@@ -1,5 +1,8 @@
+/* eslint-disable react/prop-types */
 
-export default function TodoList() {
+import TodoItems from "./TodoItems";
+
+export default function TodoList({todol}) {
     return (
         <div>
             <table className="table">
@@ -11,38 +14,14 @@ export default function TodoList() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td className='col-6'>
-                            <div className='row'>
-                                <div className='col-8'>
-                                    <p>Lorem ipsum dolor sit amet,
-                                    </p>
-                                </div>
-                                <div className='col'>
-                                    <button type="button" className="btn btn-outline-danger">Delete</button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Mark</td>
-                        <td className='col-6'>
-                            <div className='row'>
-                                <div className='col-8'>
-                                    <p>Lorem ipsum dolor sit amet,
-                                    </p>
-                                </div>
-                                <div className='col'>
-                                    <button type="button" className="btn btn-outline-danger">Delete</button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+                    {todol.map((item, index )=>{
+                        // eslint-disable-next-line react/jsx-key
+                        return <TodoItems key={index} todo={item} indx={index}/>
+                    })}
                 </tbody>
             </table>
         </div>
     )
 }
+
+
