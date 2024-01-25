@@ -4,10 +4,10 @@ import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 export default function App() {
   const todolist = [
-    {
-      name: 'computer',
-      desc: 'Computer adsoihsd'
-    }
+    // {
+    //   name: 'computer',
+    //   desc: 'Computer adsoihsd'
+    // }
   ]
   return (
     <>
